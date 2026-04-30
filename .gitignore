@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+
+# Virtual env
+venv/
+env/
+
+# Reports (generated)
+reports/
+
+# ChromaDB
+chroma_db/
+
+# MLflow
+mlruns/
+
+# Node
+node_modules/
+
+# OS
+.DS_Store
+Thumbs.db

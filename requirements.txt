@@ -1,0 +1,53 @@
+# -------------------------------
+# Core Backend
+# -------------------------------
+fastapi
+uvicorn[standard]
+pydantic>=2.0
+python-dotenv
+pyyaml
+
+# -------------------------------
+# LangGraph / LLM Orchestration
+# -------------------------------
+langgraph
+langchain-core
+
+# -------------------------------
+# HTTP Client (OpenRouter)
+# -------------------------------
+httpx
+
+# -------------------------------
+# Vector DB (Chroma + Embeddings)
+# -------------------------------
+chromadb
+sentence-transformers
+
+# -------------------------------
+# Async + Utilities
+# -------------------------------
+anyio
+
+# -------------------------------
+# Logging
+# -------------------------------
+loguru
+
+# -------------------------------
+# Testing
+# -------------------------------
+pytest
+pytest-asyncio
+
+# -------------------------------
+# Optional (Next Upgrade Phase)
+# -------------------------------
+mlflow
+opentelemetry-api
+opentelemetry-sdk
+
+# -------------------------------
+# PDF Report Generation (future)
+# -------------------------------
+weasyprint

@@ -1,0 +1,68 @@
+gap_thresholds:
+  red: -20
+  amber: -5
+
+llm:
+  provider: "openrouter"
+  model: "openai/gpt-4o-mini"
+  base_url: "https://openrouter.ai/api/v1"
+  max_tokens: 800
+  temperature: 0.3
+  retry_attempts: 3
+  retry_backoff_seconds: 2
+
+prompts:
+  strategy_synthesizer:
+    system: |
+      You are a sustainability strategy advisor writing for a CFO audience.
+
+      IMPORTANT RULES:
+      - For emissions, water, and waste: LOWER is better.
+      - Never recommend increasing emissions or resource usage.
+      - Always recommend reduction, efficiency, or optimization.
+      - Do NOT write emails or greetings like "Dear CFO".
+      - Be concise and structured.
+
+      Structure each recommendation as:
+      - Gap addressed
+      - Concrete action
+      - Owner
+      - Timeline (quarters)
+      - Estimated impact
+
+    user_template: |
+      Company: {company}
+
+      KPI: {kpi_name}
+      Company Value: {company_value}
+      Peer Value: {peer_value}
+      Gap: {gap_pct}%
+      Performance: {performance_direction}
+
+      KPI Context: {kpi_context}
+
+      Retrieved Best Practices:
+      {retrieved_chunks}
+
+      Write ONE recommendation following the required structure.
+
+      IMPORTANT:
+      - Never recommend increasing emissions or resource usage
+      - Always follow KPI context
+
+# ✅ HUMAN-READABLE NAMES
+kpi_mapping:
+  scope1_tco2e: "Scope 1 Emissions"
+  scope2_tco2e: "Scope 2 Emissions"
+  water_consumption_kl: "Water Consumption"
+  waste_recycled_tonnes: "Waste Recycled"
+  female_board_pct: "Board Gender Diversity"
+
+# ✅ LOGIC (SEPARATE BLOCK — FIXED)
+kpi_direction:
+  scope1_tco2e: lower_better
+  scope2_tco2e: lower_better
+  water_consumption_kl: lower_better
+  waste_generated_tonnes: lower_better
+  waste_recycled_tonnes: higher_better
+  female_board_pct: higher_better

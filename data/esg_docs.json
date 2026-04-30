@@ -1,0 +1,20 @@
+[
+  {
+    "text": "Companies should reduce Scope 1 emissions by adopting energy-efficient machinery and electrification.",
+    "source": "IEA Net Zero",
+    "kpi_tag": "scope1_tco2e",
+    "year": 2023
+  },
+  {
+    "text": "Water consumption can be reduced by implementing recycling systems and rainwater harvesting.",
+    "source": "GRI 303",
+    "kpi_tag": "water_consumption_kl",
+    "year": 2022
+  },
+  {
+    "text": "Increase board diversity by setting gender diversity targets and inclusive hiring policies.",
+    "source": "TCFD",
+    "kpi_tag": "female_board_pct",
+    "year": 2023
+  }
+]
